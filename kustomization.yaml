@@ -53,8 +53,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: "5083"
-      port: 5083
+    - name: http
+      port: 80
       targetPort: 80
   selector:
     io.kompose.service: apigateway
