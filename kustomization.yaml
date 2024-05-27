@@ -55,7 +55,7 @@ spec:
     - name: "5083"
       port: 5083
       targetPort: 80
-      nodePort: 5090
+      nodePort: 30100
   type: NodePort
   selector:
     io.kompose.service: apigateway
@@ -121,7 +121,7 @@ spec:
     - name: "5082"
       port: 5082
       targetPort: 80
-      nodePort: 5091
+      nodePort: 30101
   type: NodePort
   selector:
     io.kompose.service: coursesapi
@@ -191,7 +191,7 @@ spec:
     - name: "15672"
       port: 15672
       targetPort: 15672
-      nodePort: 5092
+      nodePort: 30102
       protocol: TCP
   type: NodePort
   selector:
@@ -322,7 +322,7 @@ spec:
     - name: "5081"
       port: 5081
       targetPort: 80
-      nodePort: 5093
+      nodePort: 30103
   type: NodePort
   selector:
     io.kompose.service: studentsapi
