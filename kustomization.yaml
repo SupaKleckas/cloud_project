@@ -30,6 +30,8 @@ spec:
               value: Development
           image: supakleckas/cloud-project:api
           name: apigateway
+          command: [ "sleep" ]
+          args: [ "infinity" ]
           ports:
             - containerPort: 80
               hostPort: 5083
@@ -49,14 +51,13 @@ metadata:
     io.kompose.service: apigateway
   name: apigateway
 spec:
+  type: LoadBalancer
   ports:
     - name: "5083"
       port: 5083
       targetPort: 80
   selector:
     io.kompose.service: apigateway
-status:
-  loadBalancer: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -94,6 +95,8 @@ spec:
               value: amqp://user:Test123123@rabbitmq:5672
           image: supakleckas/cloud-project:courses
           name: coursesapi
+          command: [ "sleep" ]
+          args: [ "infinity" ]
           ports:
             - containerPort: 80
               hostPort: 5082
@@ -288,6 +291,8 @@ spec:
               value: amqp://user:Test123123@rabbitmq:5672
           image: supakleckas/cloud-project:students
           name: studentsapi
+          command: [ "sleep" ]
+          args: [ "infinity" ]
           ports:
             - containerPort: 80
               hostPort: 5081
