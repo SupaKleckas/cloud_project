@@ -28,7 +28,7 @@ spec:
         - env:
             - name: ASPNETCORE_ENVIRONMENT
               value: Development
-          image: apigateway
+          image: supakleckas/cloud-project:dev
           name: apigateway
           ports:
             - containerPort: 80
@@ -92,7 +92,7 @@ spec:
               value: Server=sqldata;Database=CoursesDB;User Id=sa;Password=Test!@123123
             - name: MessageBroker__Host
               value: amqp://user:Test123123@rabbitmq:5672
-          image: coursesapi
+          image: supakleckas/cloud-project:dev
           name: coursesapi
           ports:
             - containerPort: 80
@@ -286,7 +286,7 @@ spec:
               value: Server=sqldata;Database=StudentDB;User Id=sa;Password=Test!@123123
             - name: MessageBroker__Host
               value: amqp://user:Test123123@rabbitmq:5672
-          image: studentsapi
+          image: supakleckas/cloud-project:dev
           name: studentsapi
           ports:
             - containerPort: 80
