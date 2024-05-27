@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  studentsapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__StudentsAPIContext=Server=sqldata;Database=StudentDB;User Id=sa;Password=Test!@123123
+      - MessageBroker__Host=amqp://user:Test123123@rabbitmq:5672
+    ports:
+      - "5081:80"
+
+  coursesapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CoursesApiContext=Server=sqldata;Database=CoursesDB;User Id=sa;Password=Test!@123123
+      - MessageBroker__Host=amqp://user:Test123123@rabbitmq:5672
+    ports:
+      - "5082:80"
+
+  apigateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5083:80"
+
+  rabbitmq:
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=Test123123
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  sqldata:
+     environment:
+       - SA_PASSWORD=Test!@123123
+       - ACCEPT_EULA=Y
+     ports:
+       - "1433:1433"
+     volumes:
+       - lab2-sqldata:/var/opt/mssql_new
+
+
+volumes:
+  lab2-sqldata:
+    external: false

@@ -1,0 +1,11 @@
+resources:
+  - k8s-manifests/apigateway-deployment.yaml
+  - k8s-manifests/apigateway-service.yaml
+  - k8s-manifests/studentsapi-deployment.yaml
+  - k8s-manifests/studentsapi-service.yaml
+  - k8s-manifests/sqldata-deployment.yaml
+  - k8s-manifests/sqldata-service.yaml
+  - k8s-manifests/coursesapi-deployment.yaml
+  - k8s-manifests/coursesapi-service.yaml
+  - k8s-manifests/rabbitmq-deployment.yaml
+  - k8s-manifests/rabbitmq-service.yaml
